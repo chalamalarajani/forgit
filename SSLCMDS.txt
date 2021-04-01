@@ -1,0 +1,9 @@
+1.How to create keydatabase:
+runmqakm -keydb -create -db key.kdb -pw -type cms -stash
+2.raise csr request:
+runmqakm -certreq -create -db key.kdb -pw -label ibmwebspheremqqmgrname -dn 
+"CN=,OU=,O=.,L=,ST=,C="
+3.To raise existing csr:
+runmqakm -certreq -recreate -db key.kdb -pw -label ibmwebspheremqqmgr -file filename
+4.Add certificate into keydatabase
+runmqakm -cert -add -db key.kdb -pw -label ibmwebspheremqqmgr -file filename
